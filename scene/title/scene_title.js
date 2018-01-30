@@ -3,8 +3,8 @@ class SceneTitle extends GuaScene {
         super(game)
         this.one = GuaBg.new(game, 'one')
         this.addElement(this.one)
-        var blast = BlastSystem.new(game)
-        this.addElement(blast)
+        // var blast = BlastSystem.new(game)
+        // this.addElement(blast)
         this.progressbar()
         this.clickscene()
     }

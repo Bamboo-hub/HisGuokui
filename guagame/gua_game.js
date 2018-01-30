@@ -23,21 +23,9 @@ class GuaGame {
         this.canvas.width = this.canvasWidth * scale
         this.canvas.height = this.canvasHeight * scale
 
-        // // 标准化坐标系以使用css像素。
-        // ctx.scale（scale，scale）;
-        //
-        // ctx.fillStyle =“＃bada55”;
-        // ctx.fillRect（10，10，300，300）;
-        // ctx.fillStyle =“#ffffff”;
-        // ctx.font ='18px Arial';
-        // ctx.textAlign ='center';
-        // ctx.textBaseline ='middle';
-        //
-        // var x = size / 2;
-        // var y = size / 2;
-        //
-        // var textString =“我爱MDN”;
-        // ctx.fillText（textString，x，y）;
+        // 标准化坐标系以使用css像素。
+        // this.context.scale(scale, scale)
+
         // events
         var self = this
         window.addEventListener('keydown', function(event){
