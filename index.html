@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>他的锅盔</title>
+        <style media="screen">
+            canvas {
+                /* border: 1px black solid; */
+                /* width: 100%; */
+            }
+            body {
+                margin: auto;
+            }
+        </style>
+        <!-- gua game 相关文件 -->
+        <script src='guagame/utils.js'></script>
+        <script src='guagame/mouse.js'></script>
+        <script src='guagame/gua_game.js'></script>
+        <script src='guagame/gua_scene.js'></script>
+        <script src='guagame/gua_bg.js'></script>
+        <script src='guagame/gua_image.js'></script>
+        <script src='guagame/gua_label.js'></script>
+        <script src='guagame/gua_rect.js'></script>
+        <script src='guagame/gua_animation.js'></script>
+        <!-- 主场景文件 -->
+        <script src='scene/poker/scene_poker.js'></script>
+        <script src='scene/poker/white_off.js'></script>
+
+        <script src='scene/incident/scene_incident.js'></script>
+        <script src='scene/incident/incident_transition.js'></script>
+        <!-- 其他场景文件 -->
+        <script src='scene/title/blast.js'></script>
+        <script src='scene/title/scene_title.js'></script>
+
+        <script src='scene/main/scene_main.js'></script>
+        <script src='scene/main/main_transition.js'></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    </head>
+    <body>
+        <canvas id="id-canvas" width="750" height="1334"></canvas>
+        <hr>
+        <input id=id-input-speed type="range" value="30">
+        <div class="">
+            <!-- <textarea id="id-text-log" rows="20" cols="50"></textarea> -->
+        </div>
+        <script src=main.js></script>
+    </body>
+</html>
