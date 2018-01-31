@@ -12,7 +12,6 @@ class SceneTitle extends GuaScene {
     removeimg() {
         var loading = document.querySelector('#loading')
         loading.remove()
-        log('remove', loading, loading.remove, loading.remove())
     }
     progressbar() {
         // 底部文字
