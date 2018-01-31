@@ -15,20 +15,14 @@ var enableDebugMode = function(game, enable) {
             log('blocks', blocks)
         }
     })
-    // 控制速度
-    document.querySelector('#id-input-speed').addEventListener('input', function(event) {
-        var input = event.target
-        // log(event, input.value)
-        window.fps = Number(input.value)
-    })
 }
 
 var __main = function() {
     var images = {
-        one: 'img/one.jpg',
-        two: 'img/two.jpg',
+        title: 'img/title.jpg',
         blast1: 'img/blast1.png',
         blast2: 'img/blast2.png',
+        main: 'img/main.jpg',
         incident1: 'img/incident1.jpg',
         incident2: 'img/incident2.jpg',
         incident3: 'img/incident3.jpg',
@@ -58,7 +52,6 @@ var __main = function() {
         poker13: 'img/poker13.jpg',
         poker14: 'img/poker14.jpg',
         poker15: 'img/poker15.jpg',
-        white: 'img/white.jpg',
     }
     var game = GuaGame.instance(30, images, function(g){
         var s = SceneTitle.new(g)

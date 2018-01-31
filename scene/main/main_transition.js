@@ -1,29 +1,11 @@
 class MainTransition {
     constructor(game) {
+        // main 至下一个界面的过渡动画
         this.game = game
-        // this.frames = []
-        this.animations = {
-            idle: [],
-        }
-        for (var i = 0; i < 3; i++) {
-            var name = 'white'
-            var t = game.textureByName(name)
-            // this.frames.push(t)
-            this.animations['idle'].push(t)
-        }
-        // this.texture = this.frames[0]
-        this.animationName = 'idle'
-        this.texture = this.frames()[0]
-        this.w = this.texture.width
-        this.h = this.texture.height
-
         this.alpha = 0
     }
     static new(...args) {
         return new this(...args)
-    }
-    frames() {
-        return this.animations[this.animationName]
     }
     draw() {
         var context = this.game.context
@@ -31,7 +13,8 @@ class MainTransition {
 
         context.globalAlpha = this.alpha
 
-        context.drawImage(this.texture, 0, 0)
+        context.fillStyle = "#ffffff"
+        context.fillRect(0, 0, this.game.canvas.width, this.game.canvas.height)
 
         context.restore()
     }

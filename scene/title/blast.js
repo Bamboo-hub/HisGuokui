@@ -1,6 +1,7 @@
 // 一个小火花粒子
 class Blast extends GuaImage {
     constructor(game) {
+        // 两种不同的粒子
         var n = randomBetween(1, 10)
         if (n > 8) {
             var name = 'blast1'
@@ -77,7 +78,7 @@ class BlastSystem {
         this.x = 150
         this.y = 150
         // 小火花粒子具体的数量
-        this.numberOfParticles = 60
+        this.numberOfParticles = 40
         this.particles = []
     }
     update() {
@@ -87,7 +88,6 @@ class BlastSystem {
         // 添加小火花
         if (this.particles.length < this.numberOfParticles) {
             var p = Blast.new(this.game)
-            // 设置初始化坐标
             var s = 2
             var vx = randomBetween(-s, s)
             var vy = randomBetween(-s, s)
