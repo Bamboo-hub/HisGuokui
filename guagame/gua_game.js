@@ -8,7 +8,7 @@ class GuaGame {
         this.scene = null
         this.actions = {}
         this.keydowns = {}
-        this.title = false
+        this.load = 0
         this.canvas = document.querySelector('#id-canvas')
         this.context = this.canvas.getContext('2d')
 
@@ -134,11 +134,16 @@ class GuaGame {
                 g.images[name] = img
                 // 所有图片都成功载入之后, 调用 run
                 loads.push(1)
+                g.load += 1
                 log('load images', loads.length, names.length)
-                if (loads.length == names.length) {
+                if (loads.length == 3) {
                     log('load images', g.images)
                     g.__start()
                 }
+                // if (loads.length == names.length) {
+                //     log('load images', g.images)
+                //     g.__start()
+                // }
             }
         }
     }
