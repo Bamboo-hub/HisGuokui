@@ -5,7 +5,7 @@ class SceneTitle extends GuaScene {
         this.addElement(this.title)
         // var blast = BlastSystem.new(game)
         // this.addElement(blast)
-        this.loadimages()
+        this.clickscene()
         this.progressbar()
     }
     progressbar() {
@@ -19,12 +19,6 @@ class SceneTitle extends GuaScene {
         var text = "点击任意区域进入活动页面"
         var t = GuaLabel.new(self.game, text, textX, textY, "#fd9dab", 30)
         this.addElement(t)
-    }
-    loadimages() {
-        var self = this
-        if (self.game.load == 33) {
-            this.clickscene()
-        }
     }
     clickscene() {
         // 判断用户点击，进入相应场景
