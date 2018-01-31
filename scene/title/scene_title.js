@@ -5,11 +5,11 @@ class SceneTitle extends GuaScene {
         this.addElement(this.title)
         // var blast = BlastSystem.new(game)
         // this.addElement(blast)
-        // this.abc()
+        this.removeimg()
         this.clickscene()
         this.progressbar()
     }
-    abc() {
+    removeimg() {
         var loading = document.querySelector('#loading')
         loading.remove()
     }
