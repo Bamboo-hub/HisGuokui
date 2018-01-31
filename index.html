@@ -11,6 +11,12 @@
             body {
                 margin: auto;
             }
+            #loading {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+            }
         </style>
         <!-- gua game 相关文件 -->
         <script src='guagame/utils.js'></script>
@@ -34,11 +40,12 @@
         <script src='scene/incident/incident_transition.js'></script>
 
         <script src='scene/poker/scene_poker.js'></script>
-        
+
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     </head>
     <body>
         <canvas id="id-canvas" width="750" height="1334"></canvas>
+        <img id="loading" src="img/loading.jpg" alt="">
         <script src=main.js></script>
     </body>
 </html>

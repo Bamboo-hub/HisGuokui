@@ -5,8 +5,13 @@ class SceneTitle extends GuaScene {
         this.addElement(this.title)
         // var blast = BlastSystem.new(game)
         // this.addElement(blast)
+        // this.abc()
         this.clickscene()
         this.progressbar()
+    }
+    abc() {
+        var loading = document.querySelector('#loading')
+        loading.remove()
     }
     progressbar() {
         // 底部文字
