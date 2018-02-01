@@ -12,9 +12,8 @@ class GuaGame {
         this.context = this.canvas.getContext('2d')
 
         // 按设备高度设置 canvas 具体大小，并保持同比
-        this.canvasWidth = document.documentElement.clientWidth
-        this.canvasHeight = document.documentElement.clientHeight
-        // 0.562218890554723
+        this.canvasWidth = window.innerWidth
+        this.canvasHeight = window.innerWidth / 0.562218890554723
 
         this.canvas.style.width = this.canvasWidth + "px"
         this.canvas.style.height = this.canvasHeight + "px"
@@ -23,9 +22,6 @@ class GuaGame {
         var scale = window.devicePixelRatio // <---在视网膜屏幕上更改为1以查看模糊的画布。
         this.canvas.width = this.canvasWidth * scale
         this.canvas.height = this.canvasHeight * scale
-
-        // 标准化坐标系以使用css像素。
-        // this.context.scale(scale, scale)
 
         // events
         var self = this
