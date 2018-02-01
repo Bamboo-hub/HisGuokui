@@ -12,8 +12,8 @@ class GuaGame {
         this.context = this.canvas.getContext('2d')
 
         // 按设备高度设置 canvas 具体大小，并保持同比
-        this.canvasWidth = window.innerWidth
-        this.canvasHeight = window.innerWidth / 0.616776315789474
+        this.canvasWidth = document.documentElement.clientWidth
+        this.canvasHeight = document.documentElement.clientHeight
         // 0.562218890554723
 
         this.canvas.style.width = this.canvasWidth + "px"
