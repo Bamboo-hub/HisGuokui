@@ -36,7 +36,6 @@ var __main = function() {
         incident11: 'img/incident11.jpg',
         incident12: 'img/incident12.jpg',
         incident13: 'img/incident13.jpg',
-        incident14: 'img/incident14.jpg',
         poker1: 'img/poker1.jpg',
         poker2: 'img/poker2.jpg',
         poker3: 'img/poker3.jpg',
@@ -51,7 +50,6 @@ var __main = function() {
         poker12: 'img/poker12.jpg',
         poker13: 'img/poker13.jpg',
         poker14: 'img/poker14.jpg',
-        poker15: 'img/poker15.jpg',
     }
     var game = GuaGame.instance(30, images, function(g){
         var s = SceneTitle.new(g)

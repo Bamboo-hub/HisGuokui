@@ -1,7 +1,8 @@
-class MainTransition {
-    constructor(game) {
-        // main 至下一个界面的过渡动画
+class PokerTransition {
+    constructor(game, name) {
+        // poker 至下一个界面的过渡动画
         this.game = game
+        this.name = name
         this.alpha = 0
     }
     static new(...args) {
@@ -22,10 +23,8 @@ class MainTransition {
         var self = this
         this.alpha += 0.05
         if (this.alpha >= 1) {
-            var randomInt = randomBetween(1, 13)
-            var name = `incident${randomInt}`
-            var s = SceneIncident.new(self.game, name)
-            self.game.replaceScene(s)
+            var m = SceneMain.new(self.game)
+            self.game.replaceScene(m)
         }
     }
 }

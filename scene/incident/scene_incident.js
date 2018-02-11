@@ -32,21 +32,21 @@ class SceneIncident extends GuaScene {
             [h/100*51.3, h/100*56.7],
         ]
 
+        // 每道题目的正确答案
         var o = {
-            'incident1': one,
+            'incident1': three,
             'incident2': two,
-            'incident3': three,
-            'incident4': two,
+            'incident3': one,
+            'incident4': one, // 三个均为正确答案
             'incident5': three,
-            'incident6': one,
-            'incident7': one,
-            'incident8': one,
-            'incident9': two,
-            'incident10': two,
-            'incident11': two,
-            'incident12': two,
-            'incident13': one,
-            'incident14': one,
+            'incident6': two,
+            'incident7': three,
+            'incident8': two,
+            'incident9': one, // 三个均为正确答案
+            'incident10': three,
+            'incident11': one,
+            'incident12': one,
+            'incident13': three,
         }
         // 字符串中含有数字，因此无法用点语法访问
         this.left = w/100*7.2
@@ -70,8 +70,9 @@ class SceneIncident extends GuaScene {
         var self = this
         return x > self.left && x < self.right && y > top && y < bottom
     }
-    clickscene() {
+    selectanswer() {
         // 判断用户点击的位置，必须点到规定内的位置，才会进入相应场景
+        // 三项中会有一项是正确答案
         var self = this
         var incidentClick = function(event) {
             var x = event.offsetX
@@ -86,14 +87,14 @@ class SceneIncident extends GuaScene {
                 self.game.canvas.removeEventListener('click', incidentClick)
             } else if (self.selectsolution(x, y, self.errorTop, self.errorBottom)) {
                 log('点击错误答案')
-                var index = 15
+                var index = 14
                 var name = `poker${index}`
                 var s = IncidentTransition.new(self.game, name)
                 self.addElement(s)
                 self.game.canvas.removeEventListener('click', incidentClick)
             } else if (self.selectsolution(x, y, self.errorTop1, self.errorBottom1)) {
                 log('点击错误答案')
-                var index = 15
+                var index = 14
                 var name = `poker${index}`
                 var s = IncidentTransition.new(self.game, name)
                 self.addElement(s)
@@ -103,6 +104,38 @@ class SceneIncident extends GuaScene {
             }
         }
         this.game.canvas.addEventListener('click', incidentClick)
+    }
+    selectanswer2() {
+        // 判断用户点击的位置，必须点到规定内的位置，才会进入相应场景
+        // 三项都是正确答案
+        var self = this
+        var incidentClick = function(event) {
+            var x = event.offsetX
+            var y = event.offsetY
+            // log('click', self.selectsolution(x, y, self.top, self.bottom))
+            if (self.selectsolution(x, y, self.top, self.bottom) ||
+                self.selectsolution(x, y, self.errorTop, self.errorBottom) ||
+                self.selectsolution(x, y, self.errorTop1, self.errorBottom1)) {
+                log('三项都是正确答案 点击正确答案')
+                var index = self.name.slice(8)
+                var name = `poker${index}`
+                var s = IncidentTransition.new(self.game, name)
+                self.addElement(s)
+                self.game.canvas.removeEventListener('click', incidentClick)
+            } else {
+                log('点击范围无效')
+            }
+        }
+        this.game.canvas.addEventListener('click', incidentClick)
+    }
+    clickscene() {
+        var self = this
+        var index = self.name.slice(8)
+        if (index == 4 || index == 9) {
+            self.selectanswer2()
+        } else {
+            self.selectanswer()
+        }
     }
     draw() {
         super.draw()

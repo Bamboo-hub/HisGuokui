@@ -3,6 +3,8 @@ class SceneMain extends GuaScene {
         super(game)
         this.main = GuaBg.new(game, 'main')
         this.addElement(this.main)
+        var w = WhiteOff.new(game)
+        this.addElement(w)
         this.clickscene()
     }
     clickscene() {

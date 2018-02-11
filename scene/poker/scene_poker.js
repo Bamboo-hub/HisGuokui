@@ -21,7 +21,7 @@ class ScenePoker extends GuaScene {
             var x = event.offsetX
             var y = event.offsetY
             if (x > left && x < right && y > top && y < bottom) {
-                var w = SceneTitle.new(self.game)
+                var w = PokerTransition.new(self.game)
                 self.addElement(w)
                 self.game.canvas.removeEventListener('click', pokerClick)
             }
