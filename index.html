@@ -16,9 +16,6 @@
                 .reminder {
                     display: none;
                 }
-                .reminder2 {
-                    display: none;
-                }
                 #loading {
                     position: absolute;
                     top: 0;
@@ -26,18 +23,7 @@
                     width: 100%;
                 }
             }
-            @media all and (orientation: portrait) and (min-width: 601px){
-                canvas {
-                    display: none;
-                }
-                .reminder2 {
-                    display: none;
-                }
-                #loading {
-                    display: none;
-                }
-            }
-            @media all and (orientation: landscape) and (min-width: 601px){
+            @media all and (min-width: 601px){
                 canvas {
                     display: none;
                 }
@@ -80,8 +66,7 @@
             <canvas id="id-canvas" width="750" height="1334"></canvas>
         </div>
         <img id="loading" src="img/loading.jpg" alt="">
-        <span class="reminder">请使用手机打开此页面…</span>
-        <span class="reminder2">请使用竖屏打开此页面…</span>
+        <span class="reminder">请使用手机打开此页面，并且保持竖屏…</span>
         <script src=main.js></script>
     </body>
 </html>
