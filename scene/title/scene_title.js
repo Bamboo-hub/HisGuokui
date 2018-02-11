@@ -22,9 +22,9 @@ class SceneTitle extends GuaScene {
         var h = self.game.canvas.height
         // 350 是文字大概的宽度，因为无法得到准确的数据所以只能手动测量
         var textX = (w - 350) / 2
-        var textY = h/100*90.9
+        var textY = h/100*87.8
         var text = "点击任意区域进入活动页面"
-        var t = GuaLabel.new(self.game, text, textX, textY, "#fd9dab", 30)
+        var t = GuaLabel.new(self.game, text, textX, textY, "#ffffff", 30)
         this.addElement(t)
     }
     clickscene() {
