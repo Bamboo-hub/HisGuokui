@@ -1,4 +1,4 @@
-// 一个小火花粒子
+// 一个粒子
 class Blast extends GuaImage {
     constructor(game) {
         // 两种不同的粒子
@@ -65,7 +65,7 @@ class Blast extends GuaImage {
     }
 }
 
-// 组合小火花
+// 组合效果
 class BlastSystem {
     constructor(game) {
         this.game = game
@@ -77,7 +77,7 @@ class BlastSystem {
     setup() {
         this.x = 150
         this.y = 150
-        // 小火花粒子具体的数量
+        // 粒子具体的数量
         this.numberOfParticles = 40
         this.particles = []
     }
@@ -85,7 +85,7 @@ class BlastSystem {
         var self = this
         var w = self.game.canvas.width
         var h = self.game.canvas.height
-        // 添加小火花
+        // 添加粒子
         if (this.particles.length < this.numberOfParticles) {
             var p = Blast.new(this.game)
             var s = 2
@@ -97,7 +97,7 @@ class BlastSystem {
             p.init(x, y, vx, vy)
             this.particles.push(p)
         }
-        // 更新所有的小火花
+        // 更新所有的粒子
         for (var p of this.particles) {
             p.update()
         }

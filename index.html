@@ -5,16 +5,10 @@
         <title>他的锅盔</title>
         <style media="screen">
             @media all and (max-width: 600px){
-                canvas {
-                    /* border: 1px black solid; */
-                    /* width: 100%; */
-                    height: 1000;
-                }
                 body {
                     margin: auto;
-                    padding: 0;
                 }
-                .reminder {
+                #reminder {
                     display: none;
                 }
                 #loading {
@@ -27,6 +21,11 @@
             @media all and (min-width: 601px){
                 canvas {
                     display: none;
+                }
+                #reminder {
+                    width: 750px;
+                    display: block;
+                    margin: 0 auto;
                 }
                 #loading {
                     display: none;
@@ -60,11 +59,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     </head>
     <body>
-        <!-- <div class="box"> -->
-            <canvas id="id-canvas" width="750" height="1334"></canvas>
-        <!-- </div> -->
+        <canvas id="id-canvas" width="750" height="1334"></canvas>
         <img id="loading" src="img/loading.jpg" alt="">
-        <span class="reminder">请使用手机打开此页面，并且保持竖屏…</span>
+        <img id="reminder" src="img/reminder.jpg" alt="">
         <script src=main.js></script>
         <script type="text/javascript">
                 var body = document.querySelector('body')
