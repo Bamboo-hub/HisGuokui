@@ -93,7 +93,7 @@ class BlastSystem {
             var vy = randomBetween(-s, s)
             // 每个粒子的坐标随机
             var x = w / 100 * randomBetween(0, 100)
-            var y = h / 100 * randomBetween(0, 65)
+            var y = h / 100 * randomBetween(50, 100)
             p.init(x, y, vx, vy)
             this.particles.push(p)
         }

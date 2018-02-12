@@ -8,6 +8,7 @@
                 canvas {
                     /* border: 1px black solid; */
                     /* width: 100%; */
+                    height: 1000;
                 }
                 body {
                     margin: auto;
@@ -59,11 +60,16 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     </head>
     <body>
-        <div class="box">
+        <!-- <div class="box"> -->
             <canvas id="id-canvas" width="750" height="1334"></canvas>
-        </div>
+        <!-- </div> -->
         <img id="loading" src="img/loading.jpg" alt="">
         <span class="reminder">请使用手机打开此页面，并且保持竖屏…</span>
         <script src=main.js></script>
+        <script type="text/javascript">
+                var body = document.querySelector('body')
+                var canvas = document.querySelector('#id-canvas')
+                body.style.height = canvas.style.height
+        </script>
     </body>
 </html>
