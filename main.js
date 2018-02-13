@@ -58,4 +58,17 @@ var __main = function() {
     enableDebugMode(game, true)
 }
 
+// 音频缓存完成后进行播放
+var music = function() {
+    var m = document.querySelector('#id-audio-player')
+    m.addEventListener('canplay', function(event){
+        m.play()
+    })
+    m.addEventListener('ended', function(event){
+        m.currentTime = 0
+        m.play()
+    })
+}
+
+music()
 __main()
