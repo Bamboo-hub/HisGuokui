@@ -62,7 +62,11 @@ var __main = function() {
 var music = function() {
     var m = document.querySelector('#id-audio-player')
     m.addEventListener('canplay', function(event){
+        log("开始播放")
         m.play()
+        var body = document.querySelector('body')
+        var button = '<button id="id-button-login">登录按钮</button>'
+        body.insertAdjacentHTML('beforeend', button)
     })
     m.addEventListener('ended', function(event){
         m.currentTime = 0
