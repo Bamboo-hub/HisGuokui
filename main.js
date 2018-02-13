@@ -60,17 +60,17 @@ var __main = function() {
 
 // 音频缓存完成后进行播放
 var music = function() {
-    var m = document.querySelector('#id-audio-player')
-    m.addEventListener('canplay', function(event){
-        log("开始播放")
+    var body = e('body')
+    body.addEventListener('click', function(event){
+        log("点击")
+        var m = e('#id-audio-player')
         m.play()
-        var body = document.querySelector('body')
-        var button = '<button id="id-button-login">登录按钮</button>'
-        body.insertAdjacentHTML('beforeend', button)
-    })
-    m.addEventListener('ended', function(event){
-        m.currentTime = 0
-        m.play()
+        var div = '<div>开始播放了</div>'
+        body.insertAdjacentHTML('beforeend', div)
+        m.addEventListener('ended', function(event){
+            m.currentTime = 0
+            m.play()
+        })
     })
 }
 
