@@ -23,6 +23,8 @@ var music = function() {
     body.addEventListener('click', function(event){
         var m = e('#id-audio-player')
         m.play()
+        var div = '<div>开始播放了</div>'
+        body.insertAdjacentHTML('beforeend', div)
         m.addEventListener('ended', function(event){
             m.currentTime = 0
             m.play()
