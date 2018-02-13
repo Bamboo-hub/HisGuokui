@@ -17,6 +17,19 @@ var enableDebugMode = function(game, enable) {
     })
 }
 
+// 音频缓存完成后进行播放
+var music = function() {
+    var body = e('body')
+    body.addEventListener('click', function(event){
+        var m = e('#id-audio-player')
+        m.play()
+        m.addEventListener('ended', function(event){
+            m.currentTime = 0
+            m.play()
+        })
+    })
+}
+
 var __main = function() {
     var images = {
         title: 'img/title.jpg',
@@ -56,22 +69,6 @@ var __main = function() {
         g.runWithScene(s)
     })
     enableDebugMode(game, true)
-}
-
-// 音频缓存完成后进行播放
-var music = function() {
-    var body = e('body')
-    body.addEventListener('click', function(event){
-        log("点击")
-        var m = e('#id-audio-player')
-        m.play()
-        var div = '<div>开始播放了</div>'
-        body.insertAdjacentHTML('beforeend', div)
-        m.addEventListener('ended', function(event){
-            m.currentTime = 0
-            m.play()
-        })
-    })
 }
 
 music()
